@@ -1,6 +1,6 @@
 import React from 'react'
 import { Image } from 'react-native'
-import Zanate from '../../../assets/zanate.png'
+import Zanate from '../../../assets/flappychapin.png'
 
  const Bird = (props) => {
      const {birdBottom,birdLeft} = props

@@ -1,9 +1,9 @@
 import { StatusBar } from 'expo-status-bar';
 import React, {useState, useEffect} from 'react';
-import { StyleSheet, Text, View, Dimensions, TouchableWithoutFeedback } from 'react-native';
+import { StyleSheet, Text, View, Dimensions, TouchableWithoutFeedback, ImageBackground } from 'react-native';
 import Bird from './components/characters/bird';
 import Obstacles from './components/obstacles';
-
+import background from './assets/flappy-bird-background-2.jpg'
 export default function App() {
   const screenWidth = Dimensions.get('window').width;
   const screenHeight = Dimensions.get('window').height;
@@ -95,6 +95,9 @@ const jump = () => {
 
   return (
     <TouchableWithoutFeedback onPress={jump}>
+      <ImageBackground source={background} style={{width: '100%', height: '100%'}}>
+    <Text>Inside</Text>
+
     <View style={styles.container}>
   
       <Bird
@@ -121,15 +124,16 @@ const jump = () => {
       gap={gap} />
       <StatusBar style="auto" />
     </View>
+    </ImageBackground>
     </TouchableWithoutFeedback>
+    
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
-  }
-});
+  },
+    });
